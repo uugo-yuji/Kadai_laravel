@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // Postとの紐付け 親
+    public function shops(){
+        return $this->hasMany('APP\Models\Post');
+    }
 }
