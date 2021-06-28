@@ -21,7 +21,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'post', 'middleware' => 'auth'], function(){
     Route::get('index', 'PostController@index')->name('post.index');
     Route::get('create', 'PostController@create')->name('post.create');
-    Route::POST('store', 'PostController@store')->name('post.store');
+    Route::post('store', 'PostController@store')->name('post.store');
+    Route::get('show/{id}', 'PostController@show')->name('post.show');
+    Route::get('{id}/edit', 'PostController@edit')->name('post.edit');
+    Route::post('update/{id}', 'PostController@update')->name('post.update');
+    Route::post('destroy/{id}', 'PostController@destroy')->name('post.destroy');
 });
 
 Auth::routes();

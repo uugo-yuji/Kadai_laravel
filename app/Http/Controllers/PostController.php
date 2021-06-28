@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Post;
+
+use Illuminate\Support\Facades\DB;
+
 class PostController extends Controller
 {
     /**
@@ -13,7 +17,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = DB::table('posts')->select('id', 'title', 'created_at')->get();
+
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -23,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -34,7 +40,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post();
+        $post->user_id = $request->user()->id;
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+        return redirect('post/index');
     }
 
     /**
@@ -45,7 +56,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -56,7 +69,9 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -68,7 +83,11 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->body = $request->body;
+        $post->save();
+        return redirect('post/index');
     }
 
     /**
@@ -79,6 +98,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('post/index');
     }
 }
