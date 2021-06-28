@@ -17,6 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::resource('posts', 'PostController');
+Route::group(['prefix' => 'post'], function(){
+    Route::get('index', 'PostController@index')->name('post.index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
