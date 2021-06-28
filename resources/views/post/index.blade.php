@@ -33,7 +33,7 @@
                       @foreach($posts as $post)
                       <tr>
                         <th scope="row"></th>
-                        <td>{{ Auth::user()->name }}</td>
+                        <td>{{ $post->user->name }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td><a href="{{ route('post.show', ['id' => $post->id]) }}">詳細をみる</a></td>
