@@ -117,7 +117,9 @@ return [
     */
 
     'attributes' => [
-        'password' => 'パスワード'
+        'password' => 'パスワード',
+        'title' => 'タイトル',
+        'body' => '本文'
     ],
 
 ];
