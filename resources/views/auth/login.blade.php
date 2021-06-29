@@ -7,6 +7,15 @@
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
+                <h2>ログイン用</h2>
+                <h4>ログインユーザ１</h4>
+                <p>メールアドレス: test@test.com</p>
+                <p>パスワード: password</p>
+                <br>
+                <h4>ログインユーザ2</h4>
+                <p>メールアドレス: test2@test.com</p>
+                <p>パスワード: password2</p>
+
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
