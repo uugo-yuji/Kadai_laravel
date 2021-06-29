@@ -13,7 +13,7 @@
                         </div>
                     @endif
 
-                    <h3>{{ Auth::user()->name }}さん</h3>
+                    <h3>{{ $post->user->name }}さんの投稿</h3>
                     <div class="card">
                       <div class="card-header">
                       {{ $post->title }}
@@ -45,6 +45,5 @@ function deletePost(e) {
     document.getElementById('delete_' + e.dataset.id).submit();
   }
 }
-
 </script>
 @endsection
