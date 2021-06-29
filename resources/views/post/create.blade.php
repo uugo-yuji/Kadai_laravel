@@ -35,7 +35,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="body" placeholder="本文"></textarea>
                   </div>
                   <br>
-                  <input class="btn btn-outline-secondary" type="submit" value="登録する">
+                  <input class="btn btn-outline-secondary" type="submit" value="投稿する">
                 </form>
                 </div>
             </div>
