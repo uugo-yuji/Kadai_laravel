@@ -11,7 +11,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                indexです
+                  <h6 class="font-weight-bold">記事一覧</h6>
                   <form method="GET" action="{{ route('post.create') }}">
                     <button type="submit" class="btn btn-outline-secondary">
                       新規登録
@@ -21,7 +21,7 @@
                   <table class="table" id="example">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"></th>
                         <th scope="col">タイトル</th>
                         <th scope="col">作成日時</th>
                         <th scope="col">詳細</th>
