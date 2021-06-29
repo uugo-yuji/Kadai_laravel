@@ -5,25 +5,23 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                indexです
+                  <h6 class="font-weight-bold">記事一覧</h6>
                   <form method="GET" action="{{ route('post.create') }}">
                     <button type="submit" class="btn btn-outline-secondary">
                       新規登録
                     </button>
                   </form>
 
-                  <table class="table">
+                  <table class="table" id="example">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ユーザ名</th>
+                        <th scope="col"></th>
                         <th scope="col">タイトル</th>
                         <th scope="col">作成日時</th>
                         <th scope="col">詳細</th>
@@ -33,7 +31,6 @@
                       @foreach($posts as $post)
                       <tr>
                         <th scope="row"></th>
-                        <td>{{ $post->user->name }}</td>
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->created_at }}</td>
                         <td><a href="{{ route('post.show', ['id' => $post->id]) }}">詳細をみる</a></td>
@@ -41,6 +38,7 @@
                       @endforeach
                     </tbody>
                   </table>
+                  {{ $posts->links() }}
                 </div>
             </div>
         </div>
