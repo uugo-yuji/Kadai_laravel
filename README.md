@@ -7,13 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## 開発環境
 
 - PHP 7.3.28 
 - Laravel Framework 7.30.4
 - psql (PostgreSQL) 13.3
 - Server version: Apache/2.4.48 
 - フロント bootstrap4
+
+## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
