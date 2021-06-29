@@ -9,6 +9,12 @@
 
 ## About Laravel
 
+- PHP 7.3.28 
+- Laravel Framework 7.30.4
+- psql (PostgreSQL) 13.3
+- Server version: Apache/2.4.48 
+- フロント bootstrap4
+
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
