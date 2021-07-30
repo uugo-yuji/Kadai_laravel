@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests\StorePost;
 
+use App\Http\Controllers\Input;
+
 class PostController extends Controller
 {
     /**
@@ -20,10 +22,29 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::table('posts')
-        ->orderBy('created_at', 'desc')
+        ->orderBy('created_at', 'asc')
         ->paginate(5);
 
         return view('post.index', compact('posts'));
+    }
+
+    public function ajax(Request $request)
+    {
+        $sortData = $request->value;
+        if ($sortData === 'asc') {
+            $posts = DB::table('posts')
+            ->orderBy('created_at', 'asc')
+
+            ->paginate(5);
+            return response()->json($posts);
+        } else {
+            $posts = DB::table('posts')
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+
+            return response()->json($posts);
+        }
+
     }
 
     /**

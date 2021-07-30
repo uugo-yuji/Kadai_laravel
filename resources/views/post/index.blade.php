@@ -17,31 +17,38 @@
                       新規登録
                     </button>
                   </form>
+                  <select id="sort" name="sort" onchange="sortChange();">
+                    <option value="asc">昇順</option>
+                    <option value="desc">降順</option>
+                  </select>
 
-                  <table class="table" id="example">
-                    <thead>
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col">タイトル</th>
-                        <th scope="col">作成日時</th>
-                        <th scope="col">詳細</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      @foreach($posts as $post)
-                      <tr>
-                        <th scope="row"></th>
-                        <td>{{ $post->title }}</td>
-                        <td>{{ $post->created_at }}</td>
-                        <td><a href="{{ route('post.show', ['id' => $post->id]) }}">詳細をみる</a></td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+                  <div class="example">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">タイトル</th>
+                          <th scope="col">作成日時</th>
+                          <th scope="col">詳細</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach($posts as $post)
+                        <tr>
+                          <th scope="row"></th>
+                          <td>{{ $post->title }}</td>
+                          <td>{{ $post->created_at }}</td>
+                          <td><a href="{{ route('post.show', ['id' => $post->id]) }}">詳細をみる</a></td>
+                        </tr>
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
                   {{ $posts->links() }}
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="{{ asset('js/sort.js') }}"></script>
 @endsection
