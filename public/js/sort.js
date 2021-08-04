@@ -39,7 +39,7 @@ $.each(data, function(index, el){
       <th scope="row"></th>
       <td>${ el.title }</td>
       <td>${ el.created_at }</td>
-      <td><a href="${  }">詳細をみる</a></td>
+      <td><a href="">詳細をみる</a></td>
     </tr>
   </tbody>
 </table>
