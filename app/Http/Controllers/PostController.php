@@ -22,7 +22,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = DB::table('posts')
-        ->orderBy('created_at', 'asc')
+        ->orderBy('created_at', 'desc')
         ->paginate(5);
 
         return view('post.index', compact('posts'));

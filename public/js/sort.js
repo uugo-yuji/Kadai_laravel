@@ -33,13 +33,13 @@ function sortChange() {
 
 $.each(data, function(index, el){
   console.log('渡ってきた値の要素')
-  console.log(el.title);
+  console.log(el);
   html2 = `
     <tr>
       <th scope="row"></th>
       <td>${ el.title }</td>
       <td>${ el.created_at }</td>
-      <td><a href="">詳細をみる</a></td>
+      <td><a href="${  }">詳細をみる</a></td>
     </tr>
   </tbody>
 </table>
